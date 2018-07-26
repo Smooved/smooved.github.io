@@ -52,7 +52,7 @@
         <div class="col-sm-8">
             <h2>Zie jij ook op tegen alles wat komt kijken bij <span class="emphasisNC">verhuizen</span>?</h2><br>
             <h4>"Verhuizen is stresserend. Verhuizen vergt veel tijd. Verhuizen is een jungle."</h4><br>
-            <p>Klinkt bekend in de oren? Geen nood, het is onze missie om <span class="emphasisNC">voor jou gratis de ultieme verhuiservaring te creëren</span>. Ontdek hoe wij jou bijstaan bij zowel de administratieve als de logistieke aspecten van jouw verhuis.</p>
+            <p>Klinkt bekend in de oren? Geen nood, het is onze missie om <b>voor jou gratis de ultieme verhuiservaring te mogelijk te creëren</b>. Ontdek hoe wij jou bijstaan bij zowel de administratieve als de logistieke aspecten van jouw verhuis.</p>
             <br>
             <a href="#contact"><button class="btn btn-default btn-lg">Get in touch!</button></a>
         </div>
@@ -75,7 +75,7 @@
         <div class="col-sm-8">
             <h2>Hoe wij <span class="emphasisNC">helpen</span></h2><br>
             <h4><strong>Administratie:</strong> Nieuwe contracten voor gas, elektriciteit, telecommunicatie en verzekeringen nodig voor jouw nieuwe verhuisadres? Geef ons jouw verhuisdatum en -adres en wij zoeken voor jou de interessantste offertes uit. Een keuze gemaakt? Wij openen jouw nieuwe contracten bij de gekozen leveranciers.</h4><br>
-            <p><strong>Logistiek:</strong> Eveneens op zoek naar logistieke ondersteuning (verhuiswagen, verhuisdozen, verhuislift, …)? Laat het ons weten en wij zoeken voor jou het interessantste aanbod uit.</p>
+            <p><strong>Logistiek:</strong> Eveneens op zoek naar logistieke ondersteuning (verhuiswagen, verhuisdozen, verhuislift, andere)? Laat het ons weten en wij zoeken voor jou het interessantste aanbod uit.</p>
         </div>
     </div>
 </div>
@@ -179,26 +179,21 @@
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
                 event.preventDefault();
-
                 // Store hash
                 var hash = this.hash;
-
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 900, function(){
-
                     // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
                 });
             } // End if
         });
-
         $(window).scroll(function() {
             $(".slideanim").each(function(){
                 var pos = $(this).offset().top;
-
                 var winTop = $(window).scrollTop();
                 if (pos < winTop + 600) {
                     $(this).addClass("slide");
