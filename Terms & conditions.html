@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,27 +16,33 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="Home.html"><i class="fas fa-route fa-1x" style="color: #00887A;"></i>mooved</a>
+<div class="jumbotron text-center">
+    <img src="Smooved-logo-green.png" style="width: 50%">
+    <br>
+</div>
+
+<div id="navbar" style="z-index: 9999">
+    <nav id="navbar" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="New%20home.html">Home</a></li>
+                    <li><a href="Terms%20&%20conditions.html">Hoe werkt het?</a></li>
+                    <li><a href="About%20us.html">Over ons</a></li>
+                    <li><a href="Become-partner.html">Word partner</a></li>
+                </ul>
+                <a href="Get%20smooved!.html"><button type="button" class="btn btn-default btn-lg buttonGetSmooved-navbar">Get me <strong>Smooved</strong>!</button></a>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="Get%20smooved!.html" style="background-color: #d3e3fc">GET <i class="fas fa-route fa-2x" style="color: #00887A;"></i><strong>MOOVED</strong>!</a></li>
-                <li><a href="About%20us.html">ABOUT US</a></li>
-                <li><a href="Terms%20&%20conditions.html">TERMS & CONDITIONS</a></li>
-                <li><a href="Home.html#contact">CONTACT</a></li>
-                <li><a href="Become-partner.html">BECOME A PARNTER</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
+</div>
 
 <!-- Container (Terms & conditions Section) -->
 <div id="terms" class="container-fluid">
@@ -45,14 +52,68 @@
             <i class="fas fa-file-contract fa-10x" style="color: #00887A;"></i>
         </div>
         <div class="col-sm-10">
-            <h2>Algemene <span class="emphasisNC">voorwaarden</span></h2><br>
-            <h4>Goede afspraken maken goede vrienden.</h4><br>
-            <p>Nog niet 100% overtuigd van onze dienstverlening? Onze algemene voorwaarden omschrijven meer in detail welke dienstverlening je van ons mag verwachten en welke niet. We vatten het even voor jou samen: Smooved organiseert het opstarten en afsluiten van de nieuwe contracten voor de nutsvoorzieningen en verzekeringen in jouw nieuwe woonst. Onze diensten beperken zich tot het sluiten en activeren van de contracten bij de door jou gekozen leveranciers. Bijgevolg is Smooved niet verantwoordelijk voor eventuele tekortkomingen van deze leveranciers. Neem gerust de tijd om onze algemene voorwaarden in meer detail door te nemen.
+            <h5 class="h5-inverse">Algemene voorwaarden</h5><br>
+            <h4 class="h4-inverse">Ook al helpen we je gratis verder - goeie afspraken maken goeie vrienden.</h4><br>
+            <p style="color: #045056;">Ons team van juristen heeft de algemene voorwaarden opgesteld - concreet komt het erop neer dat wij je zo
+                ver mogelijk verder helpen met het afsluiten van die diensten, maar niet verantwoordelijk zijn voor
+                stroompannes en dergelijke. Graag nog wat meer detail? Neem een kijkje hieronder
             </p>
             <br> <a href="Smooved-Algemene.Voorwaarden.pdf"><button class="btn btn-default btn-lg">Dig into the small print!</button></a>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#homePage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+<script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
 
 </body>
 </html>
