@@ -1,6 +1,4 @@
 
-
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,27 +16,33 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="Home.html"><i class="fas fa-route fa-1x" style="color: #00887A;"></i>mooved</a>
+<div class="jumbotron text-center">
+    <img src="Smooved-logo-green.png" style="width: 50%">
+    <br>
+</div>
+
+<div id="navbar" style="z-index: 9999">
+    <nav id="navbar" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="New%20home.html">Home</a></li>
+                    <li><a href="Terms%20&%20conditions.html">Hoe werkt het?</a></li>
+                    <li><a href="About%20us.html">Over ons</a></li>
+                    <li><a href="Become-partner.html">Word partner</a></li>
+                </ul>
+                <a href="Get%20smooved!.html"><button type="button" class="btn btn-default btn-lg buttonGetSmooved-navbar">Get me <strong>Smooved</strong>!</button></a>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="Get%20smooved!.html" style="background-color: #d3e3fc">GET <i class="fas fa-route fa-2x" style="color: #00887A;"></i><strong>MOOVED</strong>!</a></li>
-                <li><a href="About%20us.html">ABOUT US</a></li>
-                <li><a href="Terms%20&%20conditions.html">TERMS & CONDITIONS</a></li>
-                <li><a href="Home.html#contact">CONTACT</a></li>
-                <li><a href="Become-partner.html">BECOME A PARNTER</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
+</div>
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid bg-grey">
@@ -48,10 +52,11 @@
             <i class="fas fa-handshake fa-10x" style="color: #00887A;"></i>
         </div>
         <div class="col-sm-10">
-            <h2>Verhuizen mee ontzenuwen als <span class="emphasisNC">partner</span>?</h2><br>
-            <h4>Beantwoord hieronder dan eerst enkele vragen - het duurt slechts een minuut.</h4>
-            <p>Ook als je out-of-the-box ideeën hebt waar we ons nu nog niet op focussen, luisteren we graag naar jouw input.
+            <h5 class="h5-inverse">Verhuizen mee ontzenuwen als partner?</h5><br>
+            <h4 class="h4-inverse">Beantwoord hieronder dan eerst enkele vragen - het duurt slechts een minuut.</h4>
+            <p style="color: #045056">Ook als je out-of-the-box idee�n hebt waar we ons nu nog niet op focussen, luisteren we graag naar jouw input.
                 Vul het formulier in en we komen binnen de 24 uur bij jou terug!
+
             </p>
         </div>
     </div>
@@ -62,5 +67,59 @@
         <div class="typeform-widget" data-url="https://ignacebuelens.typeform.com/to/ZJxqRA" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> powered by <a href="https://admin.typeform.com/signup?utm_campaign=ZJxqRA&utm_source=typeform.com-12381477-Basic&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=EN" style="color: #999" target="_blank">Typeform</a> </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#homePage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+<script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
+
+
 </body>
 </html>
