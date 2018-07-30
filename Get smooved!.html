@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,37 +16,37 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="Home.html"><i class="fas fa-route fa-1x" style="color: #00887A;"></i>mooved</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="Get%20smooved!.html" style="background-color: #d3e3fc">GET <i class="fas fa-route fa-2x" style="color: #00887A;"></i><strong>MOOVED</strong>!</a></li>
-                <li><a href="About%20us.html">ABOUT US</a></li>
-                <li><a href="Terms%20&%20conditions.html">TERMS & CONDITIONS</a></li>
-                <li><a href="Home.html#contact">CONTACT</a></li>
-                <li><a href="Become-partner.html">BECOME A PARNTER</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <div class="jumbotron text-center">
+    <img src="Smooved-logo-green.png" style="width: 50%">
+    <br><br><br>
     <h1 style="text-align: center">COMING SOON</h1>
-    <div>
-        <a href="Home.html#contact"><button type="button" class="btn btn-default btn-lg" style="background-color:#d3e3fc;
-        color: #00887A;">I'm interested! <strong>Pre-register</strong> me! (it's <strong>free</strong>!)</button></a>
-    </div>
     <hr>
     <p id="demo" style="font-size:30px; text-align: center"></p>
 </div>
+
+<div id="navbar" style="z-index: 9999">
+    <nav id="navbar" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="New%20home.html">Home</a></li>
+                    <li><a href="Terms%20&%20conditions.html">Hoe werkt het?</a></li>
+                    <li><a href="About%20us.html">Over ons</a></li>
+                    <li><a href="Become-partner.html">Word partner</a></li>
+                </ul>
+                <a href="Get%20smooved!.html"><button type="button" class="btn btn-default btn-lg buttonGetSmooved-navbar">Get me <strong>Smooved</strong>!</button></a>
+            </div>
+        </div>
+    </nav>
+</div>
+
 
 <div class="container-fluid text-center">
     <img src="Customer-journey4.png" style="width: 50%; height: 50%">
@@ -84,6 +83,20 @@
     }, 1000);
 </script>
 
+<script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
 
 </body>
 </html>
