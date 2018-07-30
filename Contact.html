@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Smooved - moving made smooth!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style_format.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<div class="jumbotron text-center">
+    <img src="Smooved-logo-green.png" style="width: 50%">
+    <br>
+</div>
+
+<div id="navbar" style="z-index: 9999">
+    <nav id="navbar" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="New%20home.html">Home</a></li>
+                    <li><a href="Terms%20&%20conditions.html">Hoe werkt het?</a></li>
+                    <li><a href="About%20us.html">Over ons</a></li>
+                    <li><a href="Become-partner.html">Word partner</a></li>
+                </ul>
+                <a href="Get%20smooved!.html"><button type="button" class="btn btn-default btn-lg buttonGetSmooved-navbar">Get me <strong>Smooved</strong>!</button></a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-sm-2">
+            <br><br>
+            <i class="fas fa-handshake fa-10x" style="color: #00887A;"></i>
+        </div>
+        <div class="col-sm-10">
+            <h5 class="h5-inverse">Heb je een vraag voor ons? Of feedback?</h5><br>
+            <h4 class="h4-inverse">Vul hieronder het formulier dan in - kost je niet meer dan een minuutje.</h4>
+            <p style="color: #045056">Ook als je out-of-the-box ideeën hebt waar we ons nu nog niet op focussen, luisteren we graag naar jouw input.
+                Vul het formulier in en we komen binnen de 24 uur bij jou terug!
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="container-fluid">
+    <div class="row">
+        <div class="typeform-widget" data-url="https://ignacebuelens.typeform.com/to/AXPsOV" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> powered by <a href="https://admin.typeform.com/signup?utm_campaign=AXPsOV&utm_source=typeform.com-12381477-Basic&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=EN" style="color: #999" target="_blank">Typeform</a> </div>    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#homePage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+<script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
+
+
+</body>
+</html>
